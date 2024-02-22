@@ -3598,8 +3598,11 @@ decoration {
   @if $rimless == 'true' {
     border-radius: $window-radius;
   } @else {
-    border-radius: $window-radius + 2px;
-    border: 2px solid $primary;
+    // border-radius: $window-radius + 2px;
+    // border: 2px solid $primary;
+    border-radius: 12px 12px 0 0;
+    border-width: 0px;
+    box-shadow: $shadow-z4, 0 0 50px transparent, 0 0 0 2px $primary;
     background-clip: border-box;
   }
 
@@ -3617,7 +3620,10 @@ decoration {
     box-shadow: $shadow-z4, 0 0 50px transparent;
 
     @if $rimless == 'false' {
-      border: 2px solid $primary;
+      // border: 2px solid $primary;
+      border-radius: 12px 12px 0 0;
+      border-width: 0px;
+      box-shadow: $shadow-z4, 0 0 50px transparent, 0 0 0 2px $primary;  
       background-clip: border-box;
     }
   }

@@ -73,7 +73,7 @@ window.background.chromium {
   decoration {
     // border: none;
     background-clip: padding-box;
-    box-shadow: $shadow-z16;
+    box-shadow: 0 0 0 2px $primary;
   }
 
   // FIXME: There is no way to change the color of the toolbar buttons
