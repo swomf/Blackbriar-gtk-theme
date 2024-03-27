@@ -43,6 +43,8 @@
 
 // Workspace switcher provided by libwnck
 wnck-pager {
+  background-color: $overlay-normal;
+
   &:hover { background-color: $overlay-hover; }
 
   &:active { background-color: $overlay-active; }
