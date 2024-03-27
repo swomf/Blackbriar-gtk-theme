@@ -94,9 +94,9 @@ OPTIONS:
 
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|blue|all] (Default: grey)
 
-  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
+  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)
 
-  -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variants)
+  -s, --size VARIANT      Specify size variant [standard|compact] (Default: compact)
 
   -g, --gdm               Install GDM theme
 
@@ -742,7 +742,8 @@ if [[ "${#gcolors[@]}" -eq 0 ]] ; then
 fi
 
 if [[ "${#sizes[@]}" -eq 0 ]] ; then
-  sizes=("${SIZE_VARIANTS[0]}")
+  # compact is default
+  sizes=("${SIZE_VARIANTS[1]}")
 fi
 
 sass_temp() {
