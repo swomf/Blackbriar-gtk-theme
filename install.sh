@@ -32,7 +32,7 @@ fi
 
 SASSC_OPT="-M -t expanded"
 
-THEME_NAME=Graphite
+THEME_NAME=Blackbriar
 THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-blue')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-compact')
@@ -106,9 +106,9 @@ OPTIONS:
   -r, --remove            Uninstall/Remove themes or link for libadwaita
 
   --tweaks                Specify versions for tweaks [nord|black|darker|rimless|normal]
-                          (WORRING: 'nord' and 'darker' can not mix use with 'black'!)
+                          (WARNING: 'nord' and 'darker' can not mix use with 'black'!)
                           1. nord       Nord colorscheme version
-                          2. black      Blackness colorscheme version
+                          2. black      Blackness colorscheme version (DEFAULT)
                           3. darker     Darker (default|nord) color version (black option can not be darker)
                           4. rimless    Remove the 2px outline about windows and menus
                           5. normal     Normal sidebar style (Nautilus)
@@ -674,7 +674,7 @@ while [[ $# -gt 0 ]]; do
             ;;
           black)
             blackness="true"
-            echo -e "Install Blackness version! ..."
+            echo -e "Blackness tweak is default and does not need to be specified."
             shift
             ;;
           darker)
@@ -759,6 +759,7 @@ nord_color() {
 }
 
 blackness_color() {
+  echo -e "Install Blackness version! ..."
   sed -i "/\$color_type:/s/default/blackness/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
@@ -839,7 +840,8 @@ theme_tweaks() {
     nord_color
   fi
 
-  if [[ "$blackness" = "true" ]] ; then
+  # Blackness color is preferred for Blackbriar.
+  if [[ "$darker" != "true" && "$nord" != "true" ]] ; then
     blackness_color
   fi
 
