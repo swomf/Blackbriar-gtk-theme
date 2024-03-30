@@ -82,6 +82,14 @@ XfdesktopIconView.view {
   padding: 12px;
   border-radius: $corner-radius;
 
+  // Match window decor in _common-3.0.scss
+  box-shadow: $shadow-z4, 0 0 50px transparent;
+
+  @if $rimless == 'false' {
+    border: 2px solid $primary;
+    background-clip: border-box;
+  }
+
   // Set the application icon- and preview-size to 64px
   -XfwmTabwinWidget-icon-size: 64px;
   -XfwmTabwinWidget-preview-size: 64px;
