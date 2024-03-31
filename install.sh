@@ -94,7 +94,7 @@ OPTIONS:
 
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|blue|all] (Default: grey)
 
-  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)
+  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: dark)
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: compact)
 
@@ -730,11 +730,11 @@ if [[ "${#themes[@]}" -eq 0 ]] ; then
 fi
 
 if [[ "${#colors[@]}" -eq 0 ]] ; then
-  colors=("${COLOR_VARIANTS[@]}")
+  colors=("${COLOR_VARIANTS[2]}")
 fi
 
 if [[ "${#lcolors[@]}" -eq 0 ]] ; then
-  lcolors=("${COLOR_VARIANTS[1]}")
+  lcolors=("${COLOR_VARIANTS[2]}")
 fi
 
 if [[ "${#gcolors[@]}" -eq 0 ]] ; then
