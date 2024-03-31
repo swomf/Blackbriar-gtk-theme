@@ -100,7 +100,7 @@ OPTIONS:
 
   -g, --gdm               Install GDM theme
 
-  -l, --libadwaita        Install link to gtk4 config for theming libadwaita
+  -l, --libadwaita        Install link to force gtk4 config on libadwaita apps
 
   -u, --uninstall
   -r, --remove            Uninstall/Remove themes or link for libadwaita
@@ -1010,4 +1010,7 @@ else
 fi
 
 echo
+if [[ "$libadwaita" != "true" ]]; then
+  echo NOTE: If libadwaita apps do not follow your theme, rerun this script with --libadwaita
+fi
 echo Done.
