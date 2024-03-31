@@ -24,3 +24,10 @@ The [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) icon
 ```
 
 Run `install.sh --help` for more information.
+
+### IMPORTANT NOTE
+
+Sometimes, libadwaita apps such as Celluloid do not
+respect the system's GTK theme. To avoid this, you can
+run `./install.sh -l` -- this option creates symlinks
+within `~/.config/gtk-4.0` to `$theme_dir/gtk-4.0`.
