@@ -1,10 +1,14 @@
 #!/bin/bash
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
-WALLPAPER_DIR="$HOME/.local/share/backgrounds"
+if [ "$EUID" -eq 0 ]; then
+  WALLPAPER_DIR="/usr/share/backgrounds"
+else
+  WALLPAPER_DIR="$HOME/.local/share/backgrounds"
+fi
 
-THEME_NAME='Graphite'
-THEME_VARIANTS=('' '-nord')
+THEME_NAME='Blackbriar'
+THEME_VARIANTS=('')
 
 #COLORS
 CDEF=" \033[0m"                               # default color

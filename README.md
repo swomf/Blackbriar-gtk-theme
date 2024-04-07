@@ -31,3 +31,20 @@ Sometimes, libadwaita apps such as Celluloid do not
 respect the system's GTK theme. To avoid this, you can
 run `./install.sh -l` -- this option creates symlinks
 within `~/.config/gtk-4.0` to `$theme_dir/gtk-4.0`.
+
+## Licensing/Attribution
+
+GNU GPL v3
+
+| Resource             | Source               | License             |
+|----------------------|----------------------|---------------------|
+| Main forked theme    | [Graphite-gtk-theme] | GPLv3               |
+| Crystal wallpaper    | [articted]           | "no commercial use" |
+| [Lagtrain] wallpaper | edit of a frame      | ?                   |
+
+* The Lagtrain wallpaper is a derivative work edited from a
+  frame from the *inabakumori - Lagtrain* music video.
+
+[Graphite-gtk-theme]: https://github.com/vinceliuice/Graphite-gtk-theme
+[articted]: https://www.behance.net/gallery/10876531/FLATzero-Wallpaper-Pack
+[Lagtrain]: https://youtube.com/watch?v=UnIhRpIT7nc
