@@ -562,7 +562,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${#themes[@]}" -eq 0 ]] ; then
-  themes=("${THEME_VARIANTS[0]}")
+  themes=("${THEME_VARIANTS[@]}")
 fi
 
 if [[ "${#colors[@]}" -eq 0 ]] ; then
@@ -574,7 +574,7 @@ if [[ "${#lcolors[@]}" -eq 0 ]] ; then
 fi
 
 if [[ "${#gcolors[@]}" -eq 0 ]] ; then
-  gcolors=("${COLOR_VARIANTS[2]}")
+  gcolors=("${COLOR_VARIANTS[@]}")
 fi
 
 if [[ "${#sizes[@]}" -eq 0 ]] ; then
@@ -736,13 +736,23 @@ uninstall() {
   if [[ -d "${THEME_DIR}" ]]; then
     echo -e "Uninstall ${THEME_DIR}... "
     rm -rf "${THEME_DIR}"
+    rm -rf "${THEME_DIR}"-hdpi
+    rm -rf "${THEME_DIR}"-xhdpi
+  fi
+
+  if [[ -d "${THEME_DIR}"-hdpi ]]; then
+    rm -rf "${THEME_DIR}"-hdpi
+  fi
+
+  if [[ -d "${THEME_DIR}"-xhdpi ]]; then
+    rm -rf "${THEME_DIR}"-xhdpi
   fi
 }
 
 link_theme() {
-  for theme in "${themes[@]}"; do
-    for lcolor in "${lcolors[@]}"; do
-      for size in "${sizes[@]}"; do
+  for theme in "${themes[0]}"; do
+    for lcolor in "${lcolors[1]}"; do
+      for size in "${sizes[0]}"; do
         link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$lcolor" "$size" "$ctype"
       done
     done
@@ -772,9 +782,9 @@ uninstall_theme() {
 }
 
 install_theme() {
-  for theme in "${themes[@]}"; do
+  for theme in "${themes[0]}"; do
     for color in "${colors[@]}"; do
-      for size in "${sizes[@]}"; do
+      for size in "${sizes[0]}"; do
         install "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
     done
@@ -782,9 +792,9 @@ install_theme() {
 }
 
 install_gdm_theme() {
-  for theme in "${themes[@]}"; do
-    for gcolor in "${gcolors[@]}"; do
-      for size in "${sizes[@]}"; do
+  for theme in "${themes[@0]}"; do
+    for gcolor in "${gcolors[2]}"; do
+      for size in "${sizes[0]}"; do
         install_gdm "${name:-$THEME_NAME}" "$theme" "$gcolor" "$size" "$ctype"
       done
     done
