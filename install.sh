@@ -100,7 +100,8 @@ OPTIONS:
 
   -l, --libadwaita        Install link to force gtk4 config on libadwaita apps
 
-  -u, --uninstall         Uninstall themes or link for libadwaita
+  -u, --uninstall
+  -r, --remove            Uninstall/Remove themes or link for libadwaita
 
   --tweaks                Specify versions for tweaks [nord|black|darker|rimless|normal]
                           (WARNING: 'nord' and 'darker' can not mix use with 'black'!)
