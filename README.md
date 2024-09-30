@@ -13,6 +13,8 @@ A black-background white-outline GTK theme. Meant to match
 
 ![XFCE preview](xfce-preview.png)
 
+- `Wallpapers` [Graphite Wallpapers](/wallpaper)
+
 ## Installation
 
 Ensure that GTK >= 3.20 and `sassc` are installed.  
